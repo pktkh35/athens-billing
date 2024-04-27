@@ -1,0 +1,24 @@
+@use "sass:math";
+@import "./color.scss";
+@import url("https://fonts.googleapis.com/css2?family=Athiti&display=swap");
+@import "https://kit-pro.fontawesome.com/releases/v6.5.2/css/pro.min.css";
+
+* {
+    font-family: "Athiti", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 1.6vmin;
+
+    user-select: none;
+}
+
+b {
+    font-weight: bold;
+}
+
+html,
+body {
+    overflow: hidden;
+}

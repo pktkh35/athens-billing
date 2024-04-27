@@ -1,0 +1,1 @@
+export const classCombine = (...classList) =>  classList.filter(classes => classes).map(classess => classess).join(" ");
