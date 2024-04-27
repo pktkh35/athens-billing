@@ -44,12 +44,26 @@ const App = () => {
                     </div>
                     <div className="list">
                         <List
+                            perPage={5}
                             className="scroll"
                             itemClassName="bill"
                             data={new Array(512).fill(null)}
+                            emptyText="ไม่มีรายการใบแจ้งหนี้"
                             content={(item, i) => {
                                 return <>
-                                    
+                                    <div className="bill-info">
+                                        <div className="label">
+                                            Fine: Lorem, ipsum dolor.
+                                        </div>
+                                        <div className="info">
+                                            จำนวน: 1,000 <small>LD</small>
+                                        </div>
+                                    </div>
+                                    <div className="bill-action">
+                                        <div className="btn">
+                                            จ่ายบิล
+                                        </div>
+                                    </div>
                                 </>
                             }}
                         />

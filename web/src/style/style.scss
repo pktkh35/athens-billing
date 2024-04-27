@@ -1,6 +1,7 @@
 @use "sass:math";
 @import "./color.scss";
 @import url("https://fonts.googleapis.com/css2?family=Athiti&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 @import "https://kit-pro.fontawesome.com/releases/v6.5.2/css/pro.min.css";
 
 * {
@@ -18,7 +19,307 @@ b {
     font-weight: bold;
 }
 
+small {
+    font-size: 0.8vmin;
+    font-weight: bold;
+    color: $p;
+}
+
 html,
 body {
     overflow: hidden;
+}
+
+.billing-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 50vmin;
+    background: $bg;
+    padding: 1vmin;
+    border-radius: 1.4vmin;
+    scale: .9;
+    opacity: 0;
+    transition: .23s;
+
+    &.show {
+        opacity: 1;
+        scale: 1;
+    }
+
+    .header {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .label {
+            font-size: 1.4vmin;
+            font-weight: bold;
+            font-family: "Oswald";
+        }
+
+        .close {
+            cursor: pointer;
+            position: relative;
+            width: 2vmin;
+            height: 2vmin;
+            background: rgb(255, 255, 255, 0.05);
+            border-radius: 0.8vmin;
+            border: 0.2vmin solid rgb(255, 255, 255, 0.05);
+            transition: 0.23s;
+
+            i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                translate: -50% -50%;
+                font-size: .8vmin;
+                transition: .23s;
+            }
+
+            &:hover {
+                background: transparentize($e, 0.8);
+                border-color: transparentize($e, 0.9);
+
+                i {
+                    scale: 1.5;
+                }
+            }
+        }
+    }
+
+    .content {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 1vmin;
+        margin-top: 1vmin;
+
+        .box-info {
+            position: relative;
+            width: 100%;
+            padding: 1vmin;
+            box-sizing: border-box;
+            background: rgb(255, 255, 255, 0.05);
+            border-radius: $br;
+            border: 0.2vmin solid rgb(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .title {
+                font-size: 1.4vmin;
+                font-weight: bold;
+            }
+
+            .value {
+                font-size: 1.2vmin;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                translate: -50% 0;
+                width: 80%;
+                height: 0.2vmin;
+                background-color: white;
+                clip-path: polygon(0.2vmin 0%, calc(100% - 0.2vmin) 0, 100% 100%, 0% 100%);
+            }
+        }
+
+        .box-groups {
+            display: flex;
+            gap: 1vmin;
+        }
+
+        .bills-list {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .title {
+                font-size: 1.4vmin;
+                font-weight: bold;
+            }
+
+            .list {
+                margin-top: 1vmin;
+                width: 100%;
+                overflow: hidden;
+
+                .scroll {
+                    position: relative;
+                    width: 100%;
+                    min-height: calc((5.6vmin * 5) + 4vmin);
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1vmin;
+
+                    .empty {
+                        position: relative;
+                        width: 100%;
+                        height: calc((5.6vmin * 5) + 4vmin);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.2vmin;
+                        opacity: .2;
+                    }
+
+                    .bill {
+                        position: relative;
+                        width: 100%;
+                        flex: 0 0 5.6vmin;
+                        border-radius: 1vmin;
+                        background: rgb(255, 255, 255, 0.05);
+                        border-radius: $br;
+                        border: 0.2vmin solid rgb(255, 255, 255, 0.05);
+                        box-sizing: border-box;
+                        padding: 0.5vmin;
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+
+                        .bill-info {
+                            position: relative;
+                            flex: 1;
+                            display: flex;
+                            flex-direction: column;
+
+                            .label {
+                                font-size: 1.4vmin;
+                                font-weight: bold;
+                            }
+
+                            .info {
+                                font-size: 1.2vmin;
+                                margin-left: 0.5vmin;
+                            }
+                        }
+
+                        .btn {
+                            position: relative;
+                            cursor: pointer;
+                            min-width: 2.5vmin;
+                            height: 2.5vmin;
+                            padding: 0 1vmin;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            border-radius: $br;
+                            font-size: 1.2vmin;
+
+                            background: #242424;
+                            border: 0.2vmin solid #323232;
+                            transition: .23s;
+                            
+                            &:hover {
+                                border: 0.2vmin solid $p;
+                                background: transparentize($p, .95);
+                    
+                                .hover {
+                                    opacity: 1;
+                                    scale: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.athens-pagination {
+    position: relative;
+    width: 100%;
+    height: 4vmin;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5vmin;
+
+    .left {
+        font-size: 1.2vmin;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 0.5vmin;
+    }
+
+    .btn {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 2.5vmin;
+        height: 2.5vmin;
+        font-size: 1vmin;
+        transition: 0.23s;
+        border: 0.2vmin solid rgb(255, 255, 255, 0.1);
+        background: rgb(255, 255, 255, 0.05);
+        border-radius: 0.5vmin;
+
+        .notHover,
+        .hover {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            transition: 0.23s;
+            opacity: 0;
+            scale: 0.9;
+            font-size: 1vmin;
+
+            div,
+            i {
+                font-size: 1vmin;
+            }
+        }
+
+        div,
+        i {
+            font-size: 1vmin;
+        }
+
+        &:not(:hover) .notHover {
+            opacity: 1;
+            scale: 1;
+        }
+
+        &.active,
+        &:hover {
+            border: 0.2vmin solid $p;
+            background: darken($p, 55%);
+
+            .hover {
+                opacity: 1;
+                scale: 1;
+            }
+        }
+    }
+}
+
+*::-webkit-scrollbar {
+    width: 0.5vmin;
+    background-color: rgb(255, 255, 255, 0.05);
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 0.5vmin;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: white;
+    transition: 0.2s;
 }
