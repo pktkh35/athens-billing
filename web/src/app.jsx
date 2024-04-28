@@ -2,7 +2,7 @@ import List from "./components/List"
 
 const App = () => {
     return <>
-        <div className="billing-menu">
+        <div className="billing-menu show">
             <div className="header">
                 <div className="label">
                     BILLING MENU

@@ -163,11 +163,6 @@ body {
                 &:hover {
                     border: 0.2vmin solid $p;
                     background: transparentize($p, .95);
-        
-                    .hover {
-                        opacity: 1;
-                        scale: 1;
-                    }
                 }
             }
 
@@ -271,6 +266,7 @@ body {
         min-width: 2.5vmin;
         height: 2.5vmin;
         font-size: 1vmin;
+        padding: 0 !important;
         transition: 0.23s;
         border: 0.2vmin solid rgb(255, 255, 255, 0.1);
         background: rgb(255, 255, 255, 0.05);
