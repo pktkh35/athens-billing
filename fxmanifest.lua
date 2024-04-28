@@ -11,17 +11,16 @@ lua54 'yes'
 shared_scripts {
     '@es_extended/imports.lua',
     "config/shared/config.general.lua",
-    "config/shared/config.area.lua",
     "config/shared/config.translate.lua",
 }
 
 client_scripts {
     "config/client/config.functions.lua",
-    "config/client/config.minigame.lua",
     "core/cl_main.lua",
 }
 
 server_scripts {
+    '@oxmysql/lib/MySQL.lua',
     "config/server/config.functions.lua",
     "core/sv_main.lua",
 }
