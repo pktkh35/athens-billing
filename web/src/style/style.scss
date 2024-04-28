@@ -144,6 +144,39 @@ body {
             display: flex;
             flex-direction: column;
 
+            .btn {
+                position: relative;
+                cursor: pointer;
+                min-width: 2.5vmin;
+                height: 2.5vmin;
+                padding: 0 1vmin;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: $br;
+                font-size: 1.2vmin;
+
+                background: #242424;
+                border: 0.2vmin solid #323232;
+                transition: .23s;
+                
+                &:hover {
+                    border: 0.2vmin solid $p;
+                    background: transparentize($p, .95);
+        
+                    .hover {
+                        opacity: 1;
+                        scale: 1;
+                    }
+                }
+            }
+
+            .bill-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
             .title {
                 font-size: 1.4vmin;
                 font-weight: bold;
@@ -201,33 +234,6 @@ body {
                             .info {
                                 font-size: 1.2vmin;
                                 margin-left: 0.5vmin;
-                            }
-                        }
-
-                        .btn {
-                            position: relative;
-                            cursor: pointer;
-                            min-width: 2.5vmin;
-                            height: 2.5vmin;
-                            padding: 0 1vmin;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            border-radius: $br;
-                            font-size: 1.2vmin;
-
-                            background: #242424;
-                            border: 0.2vmin solid #323232;
-                            transition: .23s;
-                            
-                            &:hover {
-                                border: 0.2vmin solid $p;
-                                background: transparentize($p, .95);
-                    
-                                .hover {
-                                    opacity: 1;
-                                    scale: 1;
-                                }
                             }
                         }
                     }

@@ -39,8 +39,13 @@ const App = () => {
                     </div>
                 </div>
                 <div className="bills-list">
-                    <div className="title">
-                        รายการใบแจ้งหนี้ทั้งหมด
+                    <div className="bill-header">
+                        <div className="title">
+                            รายการใบแจ้งหนี้ทั้งหมด
+                        </div>
+                        <div className="btn">
+                            จ่ายทั้งหมด
+                        </div>
                     </div>
                     <div className="list">
                         <List
